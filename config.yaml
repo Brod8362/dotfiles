@@ -26,6 +26,9 @@ dotfiles:
   f_config.rasi:
     src: config/rofi/config.rasi
     dst: ~/.config/rofi/config.rasi
+  f_mpdconf:
+    src: mpdconf
+    dst: ~/.mpdconf
 profiles:
   Byakuren:
     dotfiles:
@@ -35,3 +38,4 @@ profiles:
     - f_i3blocks.conf
     - f_dunstrc
     - f_config.rasi
+    - f_mpdconf
