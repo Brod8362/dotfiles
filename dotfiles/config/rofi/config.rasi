@@ -1,0 +1,8 @@
+configuration {
+	modi: "window,run,ssh";
+	width:75;
+	lines:15;
+	columns:2;
+	font:"Roboto Condensed 12";
+}
+@import "/usr/share/rofi/themes/Monokai.rasi"

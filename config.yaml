@@ -11,7 +11,27 @@ dotfiles:
   f_config:
     src: config/i3/config
     dst: ~/.config/i3/config
+  f_vimrc:
+    src: vimrc
+    dst: ~/.vimrc
+  f_zshrc:
+    src: zshrc
+    dst: ~/.zshrc
+  f_i3blocks.conf:
+    src: i3blocks.conf
+    dst: ~/.i3blocks.conf
+  f_dunstrc:
+    src: config/dunst/dunstrc
+    dst: ~/.config/dunst/dunstrc
+  f_config.rasi:
+    src: config/rofi/config.rasi
+    dst: ~/.config/rofi/config.rasi
 profiles:
   Byakuren:
     dotfiles:
     - f_config
+    - f_vimrc
+    - f_zshrc
+    - f_i3blocks.conf
+    - f_dunstrc
+    - f_config.rasi
