@@ -29,6 +29,9 @@ dotfiles:
   f_mpdconf:
     src: mpdconf
     dst: ~/.mpdconf
+  f_xresources:
+    src: Xresources
+    dst: ~/.Xresources
 profiles:
   Byakuren:
     dotfiles:
@@ -39,3 +42,4 @@ profiles:
     - f_dunstrc
     - f_config.rasi
     - f_mpdconf
+    - f_xresources
