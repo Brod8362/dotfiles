@@ -98,3 +98,4 @@ PATH=~/bin:$PATH
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pacaur="yay"
 alias srb2jart="srb2kart -opengl"
+alias qbittorrent="QT_SCALE_FACTOR_ROUNDING_POLICY=Round qbittorrent"

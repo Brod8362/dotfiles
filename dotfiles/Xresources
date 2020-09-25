@@ -1,6 +1,6 @@
 URxvt.geometry: 120x40
 !URxvt.font: xft:bitstream vera sans mono:pixelsize=12:antialias=true,xft:Terminus
-URxvt.font: xft: xos4 Terminus:pixelsize=14:antialias=true,xft:Tewi
+URxvt.font: xft:Source Code Pro:pixelsize=14:antialias=true,xft:Tewi
 !URxvt.font:xft:Tewi:pixelsize=13:antialias=false
 !URxvt.font:xft:PowerlineSymbols:pixelsize=12,xft:bitstream vera sans mono:pixelsize=12:antialias=true
 
@@ -98,7 +98,7 @@ URxvt.cursorColor:  #dc74d1
 URxvt.cursorColor2: #000000
 URxvt.pointerColor: #dc74d1
 URxvt.background:   #0e0e0e
-URxvt.foreground:   #4ad5e1
+!URxvt.foreground:   #4ad5e1
 URxvt.color0:       #000000
 URxvt.color8:       #8b8f93
 URxvt.color1:       #dc5471
