@@ -32,6 +32,22 @@ dotfiles:
   f_xresources:
     src: Xresources
     dst: ~/.Xresources
+  f_sway_config:
+    src: config/sway/config
+    dst: ~/.config/sway/config
+    chmod: '755'
+  f_status.toml:
+    src: config/sway/status.toml
+    dst: ~/.config/sway/status.toml
+  f_top.toml:
+    src: config/sway/top.toml
+    dst: ~/.config/sway/top.toml
+  f_dunst_dunstrc:
+    src: config/dunst/dunstrc
+    dst: ~/.config/dunst/dunstrc
+  f_rofi_config:
+    src: config/rofi/config
+    dst: ~/.config/rofi/config
 profiles:
   Byakuren:
     dotfiles:
@@ -43,3 +59,10 @@ profiles:
     - f_config.rasi
     - f_mpdconf
     - f_xresources
+  p14s:
+    dotfiles:
+    - f_sway_config
+    - f_status.toml
+    - f_top.toml
+    - f_dunst_dunstrc
+    - f_rofi_config

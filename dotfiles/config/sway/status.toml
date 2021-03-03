@@ -1,0 +1,85 @@
+[theme]
+name = "gruvbox-dark" #slick
+[theme.overrides]
+good_bg = "#008080"
+alternating_tint_bg = "#121212"
+
+[icons]
+name = "awesome"
+[icons.overrides]
+net_wireless = "" 
+
+[[block]]
+block = "networkmanager"
+
+[[block]]
+block = "net"
+interval=2
+#signal_strength=true
+
+[[block]]
+block = "memory"
+icons=true
+format_mem="{Mug}G/{MTg}G ({Mup}%)"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GB"
+interval = 60
+
+[[block]]
+block = "disk_space"
+path = "/home/brod8362/"
+alias = "~"
+info_type = "available"
+
+[[block]]
+block = "cpu"
+interval = 2
+per_core=false
+format = "{barchart} {utilization}% {frequency}GHz"
+
+[[block]]
+block = "temperature"
+collapsed=false
+interval = 10
+format = "CPU {max}°C"
+chip="k10temp-pci-00c3"
+idle=54
+info=65
+warning=76
+
+[[block]]
+block = "temperature"
+collapsed=false
+interval = 10
+format = "GPU {max}°C"
+chip="amdgpu-pci-0700"
+idle=54
+info=65
+warning=76
+
+[[block]]
+block = "custom"
+interval=2
+command = "echo \"$(cat /sys/class/hwmon/hwmon*/fan1_input) RPM\""
+
+#[[block]]
+#block = "battery"
+#driver = "upower"
+#format = "{percentage}% ({time})"
+#device="BAT0"
+
+#[[block]]
+#block = "battery"
+#driver = "upower"
+#format = "{percentage}% ({time})"
+#device="BAT1"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%Y/%m/%d %R"
