@@ -48,6 +48,15 @@ dotfiles:
   f_rofi_config:
     src: config/rofi/config
     dst: ~/.config/rofi/config
+  f_xresources_1:
+    src: Xresources
+    dst: ~/.Xresources
+  f_zshrc_1:
+    src: zshrc
+    dst: ~/.zshrc
+  f_mpdconf_1:
+    src: mpdconf
+    dst: ~/.mpdconf
 profiles:
   Byakuren:
     dotfiles:
@@ -66,3 +75,6 @@ profiles:
     - f_top.toml
     - f_dunst_dunstrc
     - f_rofi_config
+    - f_xresources_1
+    - f_zshrc_1
+    - f_mpdconf_1
