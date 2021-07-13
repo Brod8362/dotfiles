@@ -103,7 +103,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # manual invocation of dock scripts
 bindsym Ctrl+Insert exec ~/bin/dock/dock.sh 
-bindsym Ctrl+Mod1+Delete exec ~/bin/dock/undock.sh
+bindsym --locked Ctrl+Mod1+Delete exec ~/bin/dock/undock.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

@@ -81,5 +81,5 @@ command = "echo \"$(cat /sys/class/hwmon/hwmon*/fan1_input) RPM\""
 
 [[block]]
 block = "time"
-interval = 60
+interval = 5
 format = "%Y/%m/%d %R"
