@@ -1,3 +1,4 @@
+##$ hosts: p14s, byakuren2
 [theme]
 name = "native" #slick
 [theme.overrides]
@@ -27,7 +28,12 @@ interval=2
 [[block]]
 block = "memory"
 icons=true
+##$ only: p14s
 format_mem="{mem_used}/{mem_total} ({mem_used_percents})"
+##$ end
+##$ only: byakuren2
+format_mem="{Mug}G/{MTg}G ({Mup}%)"
+##$ end
 
 [[block]]
 block = "disk_space"
@@ -52,16 +58,24 @@ format = "{barchart} {utilization} {frequency}"
 block = "temperature"
 collapsed=false
 interval = 10
-format = "CPU {max}C"
+format = "CPU {max}°C"
+##$ only: p14s
 chip="k10temp-pci-00c3"
+##$ end
+##$ only: byakuren2
+chip="nct6795-isa-0a20"
+inputs = ["CPUTIN", "SYSTIN"]
+##$ end
 idle=54
 info=65
 warning=76
 
+##$ only: p14s
 [[block]]
 block = "custom"
 interval=2
 command = "echo \"$(cat /sys/class/hwmon/hwmon*/fan1_input) RPM\""
+##$ end
 
 #[[block]]
 #block = "battery"

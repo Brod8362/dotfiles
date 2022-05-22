@@ -1,6 +1,6 @@
-##$ hosts: p14s, Byakuren2
+##$ hosts: p14s, byakuren2
 [theme]
-#name = "native"
+name = "native"
 [theme.overrides]
 #good_bg = "#008080"
 idle_fg = "#FFBF00"

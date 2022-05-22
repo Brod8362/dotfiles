@@ -1,3 +1,4 @@
+##$ hosts: p14s, byakuren2
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -102,22 +103,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 if [ "$TERM" = "linux" ]; then
-    echo -en "\e]P0232323" #black
-    echo -en "\e]P82B2B2B" #darkgrey
-    echo -en "\e]P1D75F5F" #darkred
-    echo -en "\e]P9E33636" #red
-    echo -en "\e]P287AF5F" #darkgreen
-    echo -en "\e]PA98E34D" #green
-    echo -en "\e]P3D7AF87" #brown
-    echo -en "\e]PBFFD75F" #yellow
-    echo -en "\e]P48787AF" #darkblue
-    echo -en "\e]PC7373C9" #blue
-    echo -en "\e]P5BD53A5" #darkmagenta
-    echo -en "\e]PDD633B2" #magenta
-    echo -en "\e]P65FAFAF" #darkcyan
-    echo -en "\e]PE44C9C9" #cyan
     echo -en "\e]P7ffbf00" #lightgrey
-    echo -en "\e]PFFFFFFF" #white
     clear #for background artifacting
 fi
 
@@ -130,8 +116,15 @@ export MOZ_ENABLE_WAYLAND=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_QPA_PLATFORM=xcb
 export LIBVIRT_DEFAULT_URI=qemu:///system
+#save 2 threads
+##$ only: p14s
 export MAKEOPTS=-j14
+##$ end
+##$ only: byakuren2
+export MAKEOPTS=-j10
+##$ end
 export IMGUR_CLIENT_ID=8bb175e1feef0b3
 
-
+##$ only: p14s
 (cat ~/.cache/wal/sequences &)
+##$ end
