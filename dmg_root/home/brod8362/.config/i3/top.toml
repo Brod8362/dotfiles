@@ -1,3 +1,4 @@
+##$ hosts: p14s, Byakuren2
 [theme]
 #name = "native"
 [theme.overrides]
@@ -37,22 +38,14 @@ block = "load"
 interval = 1
 format = "{1m}"
 
+##$ only: p14s
 [[block]]
 block = "battery"
 #driver = "upower"
 format = "{percentage} ({time}) {power}" 
 device="BAT0"
 #this is the internal battery
-
-
-[[block]]
-block = "battery"
-#driver = "upower"
-format = "Keyboard {percentage}" 
-device="hid-dc:2c:26:e3:c5:e2-battery"
-allow_missing=true
-hide_missing=true
-#kb battery
+##$ end
 
 #[[block]]
 #block="toggle"
@@ -68,6 +61,7 @@ command_on = "dunstctl set-paused false"
 command_off = "dunstctl set-paused true"
 text="Notifications"
 
+##$ only: p14s
 [[block]]
 block="toggle"
 command_state = "xinput list-props \"pointer:SynPS/2 Synaptics TouchPad\" | grep \"Device Enabled\" | grep '1$'"
@@ -75,14 +69,10 @@ command_on = "xinput enable 'pointer:SynPS/2 Synaptics TouchPad'"
 command_off = "xinput disable 'pointer:SynPS/2 Synaptics TouchPad'"
 text="Trackpad"
 
-#[[block]]
-#block="custom"
-#cycle=["speakers","headset"]
-#on_click="$HOME/bin/audio_output_swap.sh"
-
 [[block]]
 block = "backlight"
 invert_icons = true
+##$ end
 
 [[block]]
 block = "sound"
