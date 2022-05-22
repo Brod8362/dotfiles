@@ -1,0 +1,28 @@
+# See: /usr/share/doc/mpd/mpdconf.example
+
+#pid_file "/run/mpd/mpd.pid"
+
+log_file "~/.mpd/mpd.log"
+db_file "~/.mpd/mpd.db"
+state_file "~/.mpd/mpdstate"
+playlist_directory "~/.mpd/playlists"
+music_directory "~/music"
+
+bind_to_address "0.0.0.0"
+port "6600"
+log_level "secure"
+
+audio_output {
+	type	"pulse"
+	name	"MPD"
+}
+
+audio_output {
+    type                    "fifo"
+    name                    "my_fifo"
+    path                    "/tmp/mpd.fifo"
+    format                  "44100:16:2"
+}
+
+filesystem_charset "UTF-8"
+

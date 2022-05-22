@@ -1,0 +1,7 @@
+[theme.overrides]
+critical_bg = "#FF0000"
+warning_bg = "#FF9900"
+alternating_tint_bg = "#121212"
+
+[icons]
+name = "awesome"

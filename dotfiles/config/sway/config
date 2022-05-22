@@ -18,6 +18,7 @@ set $term urxvt
 #font pango:DejaVu Sans Mono, FontAwesome
 
 ## sway stuff
+include "$HOME/.cache/wal/colors-sway"
 
 exec dunst
 
@@ -28,6 +29,8 @@ input * {
 }
 
 output * bg #008080 solid_color
+
+exec wal -R
 
 exec swayidle -w \
          timeout 300 'swaylock' before-sleep 'swaylock'
@@ -274,6 +277,7 @@ bindsym $mod+Shift+grave move scratchpad
 bindsym $mod+grave scratchpad show
 
 client.focused #d30834 #ff6868 #fdf6e3 #859900
+#client.focused $color0 $background $foreground $color7 $background
 
 bindsym $mod+Ctrl+Left move workspace to output left
 bindsym $mod+Ctrl+Right move workspace to output right
