@@ -8,6 +8,7 @@ good_fg = "#FFFFFF"
 #critical_bg = "#FF0000"
 #warning_bg = "#FF9900"
 #alternating_tint_bg = "#121212"
+#line
 
 [icons]
 name = "awesome"
@@ -15,6 +16,11 @@ name = "awesome"
 #[[block]]
 #block = "focused_window"
 #/max_width= 99
+
+[[block]]
+block = "custom"
+command = "echo \"ssh $(ls ~/.ssh/sockets | wc -l)\""
+interval=20
 
 [[block]]
 block = "pacman"

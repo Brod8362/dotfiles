@@ -52,7 +52,12 @@ info_type = "available"
 [[block]]
 block = "cpu"
 interval = 2
+##$ only: p14s
 format = "{barchart} {utilization} {frequency}"
+##$ end
+##$ only: byakuren2
+format = "{barchart} {utilization}% {frequency}GHz"
+##$ end
 
 [[block]]
 block = "temperature"
