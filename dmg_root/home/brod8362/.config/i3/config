@@ -205,7 +205,9 @@ bar {
 	status_command RUST_BACKTRACE=full $HOME/bin/i3status-rs $HOME/.config/i3/top.toml
 
 	position top
-	tray_output none
+##$ only: byakuren2
+	tray_output DP-0
+##$ end
 	workspace_buttons no
 }
 
