@@ -199,15 +199,15 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	status_command $HOME/bin/i3status-rs $HOME/.config/i3/status.toml
+##$ only: byakuren2
+	tray_output DP-0
+##$ end
 }
 
 bar {
 	status_command RUST_BACKTRACE=full $HOME/bin/i3status-rs $HOME/.config/i3/top.toml
 
 	position top
-##$ only: byakuren2
-	tray_output DP-0
-##$ end
 	workspace_buttons no
 }
 
