@@ -198,14 +198,17 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	status_command $HOME/bin/i3status-rs $HOME/.config/i3/status.toml
+	status_command $HOME/bin/i3status-rs $HOME/.config/i3/status.toml --never-pause
 ##$ only: byakuren2
 	tray_output DP-0
+##$ end
+##$ only: p14s
+	tray_output eDP-1
 ##$ end
 }
 
 bar {
-	status_command RUST_BACKTRACE=full $HOME/bin/i3status-rs $HOME/.config/i3/top.toml
+	status_command RUST_BACKTRACE=full $HOME/bin/i3status-rs $HOME/.config/i3/top.toml --never-pause
 
 	position top
 	workspace_buttons no
