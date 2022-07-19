@@ -34,6 +34,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- $HOME/bin/lock.sh
 #run init script
 exec $HOME/init.sh
 exec_always setxkbmap -option caps:none us altgr-intl
+exec_always xrdb ~/.Xresources
+##$ only: byakuren2
+exec xrandr --output DisplayPort-2 --primary --mode 1920x1080 --rate 143.85 --set TearFree on --output HDMI-A-0 --right-of DisplayPort-2 --set TearFree on
+##$ end
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -268,3 +272,8 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioPrev exec mpc prev
 bindsym XF86AudioNext exec mpc next
+
+# always-running ncmpcpp in scratchpad
+
+exec --no-startup-id urxvt -name ncmpcpp-persist -e ncmpcpp
+for_window [instance="ncmpcpp-persist"] move scratchpad
