@@ -29,11 +29,13 @@ format = "{pacman}/{aur}"
 aur_command = "yay -Qua"
 critical_updates_regex = "(linux |linux-lts|linux-zen)"
 
+##$ not: p14s
 [[block]]
 block="weather"
 format = "{weather} {temp}"
 service = { name = "openweathermap", api_key = "a5e8a02e6ab96c2954423d4276be801f" , city_id = "4705692", units = "imperial" }
 interval=900
+##$ end
 
 [[block]]
 block="mpd"
