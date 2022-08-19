@@ -124,7 +124,3 @@ export MAKEOPTS=-j14
 export MAKEOPTS=-j10
 ##$ end
 export IMGUR_CLIENT_ID=8bb175e1feef0b3
-
-##$ only: p14s
-(cat ~/.cache/wal/sequences &)
-##$ end
