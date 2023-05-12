@@ -4,10 +4,10 @@
   "IS_MINIMIZED": false,
   "SKIP_HOST_UPDATE": true,
   "WINDOW_BOUNDS": {
-    "x": 0,
-    "y": 19,
-    "width": 1951,
-    "height": 1059
+    "x": 3840,
+    "y": 37,
+    "width": 1920,
+    "height": 1023
   },
   "enableHardwareAcceleration": true
 }

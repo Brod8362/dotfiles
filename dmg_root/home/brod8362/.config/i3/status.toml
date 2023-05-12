@@ -1,86 +1,72 @@
-##$ hosts: p14s, byakuren2
 [theme]
-name = "native" #slick
+theme = "/usr/share/i3status-rust-git/themes/native.toml"
 [theme.overrides]
-#good_fg = "#FFBF00"
-idle_fg= "#FFBF00"
-critical_bg = "#FF0000"
-critical_fg = "#000000"
-warning_bg = "#FF9900"
-alternating_tint_bg = "#121212"
+idle_fg = "#FFBF00"
+good_fg = "#FFFFFF"
 
 [icons]
-name = "awesome"
+icons = "/usr/share/i3status-rust-git/icons/awesome5.toml"
+
 [icons.overrides]
 #net_wireless = "" 
 time = ""
 net_vpn = ""
 
 [[block]]
-block = "networkmanager"
-interface_name_exclude = ["virbr0", "vnet0"]
+block = "net"
+device = "enp9s0"
+format= "$icon $device $ip $speed_down $speed_up"
 
 [[block]]
 block = "net"
-interval=2
-#signal_strength=true
+device = "wg0"
+format= "$icon $device $ip $speed_down $speed_up"
 
 [[block]]
 block = "memory"
-icons=true
-##$ only: p14s
-format_mem="{mem_used}/{mem_total} ({mem_used_percents})"
-##$ end
-##$ only: byakuren2
-format_mem="{Mug}G/{MTg}G ({Mup}%)"
-##$ end
+format="$icon $mem_used / $mem_total ($mem_used_percents)"
+format_alt="$icon_swap used $swap_used/$swap_total ($swap_used_percents)"
 
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "/"
-info_type = "available"
-unit = "GB"
 interval = 60
+format = "$path $free"
 
 [[block]]
 block = "disk_space"
-path = "/home/brod8362/"
-alias = "~"
-info_type = "available"
+path = "/home/brod8362"
+interval = 60
+format = "~ $free"
+
+[[block]]
+block = "disk_space"
+path = "/mnt/ssd"
+interval = 60
+format = "2 $free"
+
+
+[[block]]
+block = "disk_space"
+path = "/mnt/ssd3"
+interval = 60
+format = "3 $free"
 
 [[block]]
 block = "cpu"
 interval = 2
-##$ only: p14s
-format = "{barchart} {utilization} {frequency}"
-##$ end
-##$ only: byakuren2
-format = "{barchart} {utilization}% {frequency}GHz"
-##$ end
+format = "$barchart $utilization $frequency"
 
 [[block]]
 block = "temperature"
-collapsed=false
-interval = 10
-format = "CPU {max}°C"
-##$ only: p14s
-chip="k10temp-pci-00c3"
-##$ end
-##$ only: byakuren2
-chip="nct6795-isa-0a20"
-inputs = ["CPUTIN", "SYSTIN"]
-##$ end
+interval = 5
+format = "CPU $max"
+chip="coretemp-isa-0000"
+#inputs = ["CPUTIN", "SYSTIN"]
 idle=54
 info=65
 warning=76
 
-##$ only: p14s
-[[block]]
-block = "custom"
-interval=2
-command = "echo \"$(cat /sys/class/hwmon/hwmon*/fan1_input) RPM\""
-##$ end
 
 #[[block]]
 #block = "battery"
@@ -96,5 +82,5 @@ command = "echo \"$(cat /sys/class/hwmon/hwmon*/fan1_input) RPM\""
 
 [[block]]
 block = "time"
-interval = 60
-format = "%Y/%m/%d %R"
+interval = 15
+format = "$timestamp.datetime(f:'%Y/%m/%d %R')"

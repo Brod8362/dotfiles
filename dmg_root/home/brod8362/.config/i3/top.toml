@@ -1,17 +1,11 @@
-##$ hosts: p14s, byakuren2
 [theme]
-name = "native"
+theme = "/usr/share/i3status-rust-git/themes/native.toml"
 [theme.overrides]
-#good_bg = "#008080"
 idle_fg = "#FFBF00"
 good_fg = "#FFFFFF"
-#critical_bg = "#FF0000"
-#warning_bg = "#FF9900"
-#alternating_tint_bg = "#121212"
-#line
 
 [icons]
-name = "awesome"
+icons = "/usr/share/i3status-rust-git/icons/awesome5.toml"
 
 #[[block]]
 #block = "focused_window"
@@ -25,35 +19,33 @@ interval=20
 [[block]]
 block = "pacman"
 interval = 900
-format = "{pacman}/{aur}"
+format = "$icon $pacman/$aur"
 aur_command = "yay -Qua"
-critical_updates_regex = "(linux |linux-lts|linux-zen)"
+critical_updates_regex = "(linux|linux-lts|linux-zen)"
 
-##$ not: p14s
 [[block]]
 block="weather"
-format = "{weather} {temp}"
+format = "$weather $temp"
 service = { name = "openweathermap", api_key = "a5e8a02e6ab96c2954423d4276be801f" , city_id = "4705692", units = "imperial" }
 interval=900
-##$ end
 
 [[block]]
 block="mpd"
-format="{artist} - {title} [{playback_info}]{repeat}{random}{single}{consume} {volume}%"
+format="$icon $artist - $song [$elapsed/$duration]$flag_r$flag_z$flag_s$flag_c $volume%"
+interval = 1 
+address = "127.0.0.1:6600"
 
 [[block]]
 block = "load"
 interval = 1
-format = "{1m}"
+format = "$icon $1m"
 
-##$ only: p14s
+
 [[block]]
-block = "battery"
-#driver = "upower"
-format = "{percentage} ({time}) {power}" 
-device="BAT0"
-#this is the internal battery
-##$ end
+block = "custom"
+command = "echo -n \"UPS \" && apcaccess | grep BCHARGE | grep -Eo \"[0-9]+\\.[0]\""
+interval = 30
+
 
 #[[block]]
 #block="toggle"
@@ -67,20 +59,8 @@ block="toggle"
 command_state= "dunstctl is-paused | grep -o false"
 command_on = "dunstctl set-paused false"
 command_off = "dunstctl set-paused true"
-text="Notifications"
+format="$icon Notifications"
 
-##$ only: p14s
-[[block]]
-block="toggle"
-command_state = "xinput list-props \"pointer:SynPS/2 Synaptics TouchPad\" | grep \"Device Enabled\" | grep '1$'"
-command_on = "xinput enable 'pointer:SynPS/2 Synaptics TouchPad'"
-command_off = "xinput disable 'pointer:SynPS/2 Synaptics TouchPad'"
-text="Trackpad"
-
-[[block]]
-block = "backlight"
-invert_icons = true
-##$ end
 
 [[block]]
 block = "sound"

@@ -1,4 +1,3 @@
-##$ hosts: p14s, byakuren2
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -6,6 +5,8 @@
 export DISABLE_AUTO_UPDATE=true
 export ZSH="/home/brod8362/.oh-my-zsh"
 export DMG_ROOT="/home/brod8362/projects/dotfiles/dmg_root"
+
+export PICO_SDK_PATH="/home/brod8362/src/pico-sdk"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -32,7 +33,7 @@ ZSH_THEME="agnoster"
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
 
-# Uncomment the following line to change how often to auto-update (in days).
+# Uncomment the following line to change how often to auto-update (in days).KE
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
@@ -111,16 +112,19 @@ alias pacaur="yay"
 alias java8="/usr/lib/jvm/java-8-openjdk/jre/bin/java"
 alias lsh="ls -lsh"
 
-export PATH=/home/brod8362/bin:$PATH
+export PATH=/home/brod8362/.local/bin:/home/brod8362/bin:$PATH
 export MOZ_ENABLE_WAYLAND=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_QPA_PLATFORM=xcb
 export LIBVIRT_DEFAULT_URI=qemu:///system
 #save 2 threads
-##$ only: p14s
-export MAKEOPTS=-j14
-##$ end
-##$ only: byakuren2
-export MAKEOPTS=-j10
-##$ end
+export MAKEOPTS=-j18
 export IMGUR_CLIENT_ID=8bb175e1feef0b3
+export QT_XCB_NO_XI2=1
+
+export GTK_IM_MODULE=fcitx 
+export QT_IM_MODULE=fcitx 
+export XMODIFIERS=@im=fcitx
+
+export NRF5_SDK_PATH=/opt/nrf5-sdk
+export ARM_NONE_EABI_TOOLCHAIN_PATH=$HOME/src/gcc-arm-none-eabi-10.3-2021.10/

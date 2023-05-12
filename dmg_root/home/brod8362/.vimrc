@@ -1,4 +1,4 @@
-##$ hosts: p14s, byakuren2
+##$ hosts: p14s, byakuren3
 set number
 set wildmenu
 set bg=dark
@@ -17,3 +17,7 @@ set noshowmode
 let g:lightline = {
 	\ 'colorscheme':'seoul256',
 	\ }
+
+if match(&term, 'screen') >= 0 || match(&term, 'xterm') >= 0
+    set term=xterm-256color
+endif

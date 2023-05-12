@@ -1,8 +1,4 @@
-##$ hosts: byakuren2, p14s
-URxvt.geometry: 120x40
-##$ only: p14s
-Xft.dpi: 95
-##$ end
+URxvt.geometry: 120x-1
 !URxvt.font: xft:bitstream vera sans mono:pixelsize=12:antialias=true,xft:Terminus
 !URxvt.font: xft: xos4 Terminus:pixelsize=14:antialias=true,xft:Tewi
 !URxvt.font: xft:Hermit Light:pixelsize=12:antialias=true,FontAwesome:pixelsize=12
